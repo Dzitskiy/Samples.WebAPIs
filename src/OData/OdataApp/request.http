@@ -1,0 +1,6 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+http://localhost:5165/odata/OdataUsers?$select=id&$expand=comments
+http://localhost:5165/odata/OdataUsers?$select=id
+http://localhost:5165/odata/OdataUsers?$filter=username eq 'afet'
+http://localhost:5165/odata/OdataUsers?$orderBy=age%20asc
+http://localhost:5165/odata/OdataUsers?$filter=contains(Country/Name, 'ance')

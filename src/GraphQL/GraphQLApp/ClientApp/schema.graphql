@@ -1,0 +1,119 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+  query: WeatherQueries
+}
+
+"Information about pagination in a connection."
+type PageInfo {
+  "When paginating forwards, the cursor to continue."
+  endCursor: String
+  "Indicates whether more edges exist following the set defined by the clients arguments."
+  hasNextPage: Boolean!
+  "Indicates whether more edges exist prior the set defined by the clients arguments."
+  hasPreviousPage: Boolean!
+  "When paginating backwards, the cursor to continue."
+  startCursor: String
+}
+
+type WeatherForecast {
+  date: DateTime!
+  summary: String!
+  temperatureC: Int!
+  temperatureF: Int!
+}
+
+"A connection to a list of items."
+type WeatherForecastConnection {
+  "A list of edges."
+  edges: [WeatherForecastEdge!]
+  "A flattened list of the nodes."
+  nodes: [WeatherForecast]
+  "Information to aid in pagination."
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+"An edge in a connection."
+type WeatherForecastEdge {
+  "A cursor for use in pagination."
+  cursor: String!
+  "The item at the end of the edge."
+  node: WeatherForecast
+}
+
+type WeatherQueries {
+  weatherForecast(after: String, before: String, first: PaginationAmount, last: PaginationAmount, order_by: WeatherForecastSort, where: WeatherForecastFilter): WeatherForecastConnection
+}
+
+enum SortOperationKind {
+  ASC
+  DESC
+}
+
+input WeatherForecastFilter {
+  AND: [WeatherForecastFilter!]
+  OR: [WeatherForecastFilter!]
+  date: DateTime
+  date_gt: DateTime
+  date_gte: DateTime
+  date_in: [DateTime!]
+  date_lt: DateTime
+  date_lte: DateTime
+  date_not: DateTime
+  date_not_gt: DateTime
+  date_not_gte: DateTime
+  date_not_in: [DateTime!]
+  date_not_lt: DateTime
+  date_not_lte: DateTime
+  summary: String
+  summary_contains: String
+  summary_ends_with: String
+  summary_in: [String!]
+  summary_not: String
+  summary_not_contains: String
+  summary_not_ends_with: String
+  summary_not_in: [String!]
+  summary_not_starts_with: String
+  summary_starts_with: String
+  temperatureC: Int
+  temperatureC_gt: Int
+  temperatureC_gte: Int
+  temperatureC_in: [Int!]
+  temperatureC_lt: Int
+  temperatureC_lte: Int
+  temperatureC_not: Int
+  temperatureC_not_gt: Int
+  temperatureC_not_gte: Int
+  temperatureC_not_in: [Int!]
+  temperatureC_not_lt: Int
+  temperatureC_not_lte: Int
+  temperatureF: Int
+  temperatureF_gt: Int
+  temperatureF_gte: Int
+  temperatureF_in: [Int!]
+  temperatureF_lt: Int
+  temperatureF_lte: Int
+  temperatureF_not: Int
+  temperatureF_not_gt: Int
+  temperatureF_not_gte: Int
+  temperatureF_not_in: [Int!]
+  temperatureF_not_lt: Int
+  temperatureF_not_lte: Int
+}
+
+input WeatherForecastSort {
+  date: SortOperationKind
+  summary: SortOperationKind
+  temperatureC: SortOperationKind
+  temperatureF: SortOperationKind
+}
+
+
+"The multiplier path scalar represents a valid GraphQL multiplier path string."
+scalar MultiplierPath
+
+scalar PaginationAmount
+
+"The `DateTime` scalar represents an ISO-8601 compliant date time type."
+scalar DateTime
