@@ -1,5 +1,4 @@
-# WebApi.Timeline
-
+# WebApis
 Web API Samples
 
 ## Postman Demo Collection
@@ -13,6 +12,9 @@ SOAP (https://www.w3.org/TR/soap/)
   (Хороший пример, где до сих пор используюся веб-сервисы на asmx - веб сервис ЦБР: http://www.cbr.ru/DailyInfoWebServ/DailyInfo.asmx)
 - WCF 
   https://login2secure.poi2u.com/pocalc/Calculator.svc
+
+REST
+https://httpbin.org/#/
 
 OData (https://www.odata.org/)
 https://services.odata.org/V3/OData/OData.svc
